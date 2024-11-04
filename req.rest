@@ -1,0 +1,11 @@
+GET http://localhost:3333/api/product/10?title=tv
+
+###
+
+POST http://localhost:3333/api/product
+Content-Type: application/json
+
+{
+    "id":56,
+    "title":"lemon"
+}
