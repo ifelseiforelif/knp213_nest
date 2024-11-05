@@ -9,3 +9,14 @@ Content-Type: application/json
     "id":56,
     "title":"lemon"
 }
+
+###
+
+GET http://localhost:3333/api/test/3
+
+###
+
+GET http://localhost:3333/api
+
+###
+GET http://localhost:3333/api/12?title=testpipe

@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
+
 
 @Module({
-  controllers: [AppController],
   imports: [
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
     }),
+    UserModule
   ],
 })
 export class AppModule {}
