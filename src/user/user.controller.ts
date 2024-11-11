@@ -13,16 +13,27 @@ import {
   Redirect,
   Req,
   Res,
+  UseGuards,
   UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { UserService } from './user.service';
 import { UserPipe } from './user.pipe';
+import { UserCreateDto } from './dto/user-create.dto';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 //http://localhost:PORT/api/product/16?title=tv
 @Controller('api')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+
+  //@UsePipes(new ValidationPipe())
+  //@UseGuards(AuthGuard)
+  @Post('user') //POST http://localhost:3333/api/user
+  createUser(@Body() user: UserCreateDto) {
+    return user;
+  }
 
   @Header('X-Powered-By', 'Secret')
   @Get()

@@ -20,3 +20,18 @@ GET http://localhost:3333/api
 
 ###
 GET http://localhost:3333/api/12?title=testpipe
+
+###
+POST http://localhost:3333/api/user
+Content-Type: application/json
+
+{
+    "name":"custom_Alex",
+    "age":20,
+    "address":{
+        "street":"Sadovaya",
+        "house":34
+    },
+    "tags":["ttt","test2","test3"]
+
+}
