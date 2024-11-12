@@ -1,0 +1,27 @@
+POST http://localhost:3333/todo
+Content-Type: application/json
+
+{
+    "title":"Todo 3",
+    "description" : "About todo3"
+}
+
+###
+
+GET http://localhost:3333/todo
+
+###
+
+GET http://localhost:3333/todo/2
+
+###
+PATCH http://localhost:3333/todo/2
+Content-Type: application/json
+
+{
+    "title":"updated title",
+    "description":"updated description"
+}
+
+###
+DELETE http://localhost:3333/todo/1
