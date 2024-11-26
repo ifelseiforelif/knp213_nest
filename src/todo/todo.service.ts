@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Scope } from '@nestjs/common';
 import { UpdateTodoDto } from './dto/update-todo.dto';
 import { Todo } from './entities/todo.entity';
 import { InjectModel } from '@nestjs/sequelize';
 
-@Injectable()
+@Injectable({ scope: Scope.TRANSIENT })
 export class TodoService {
   constructor(@InjectModel(Todo) private readonly todo: typeof Todo) {}
   async create(createTodoDto: any) {
